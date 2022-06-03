@@ -1,5 +1,5 @@
 import * as twgl from 'twgl.js'
-import './config'
+import config from './config'
 import baseVert from './shaders/base.vert'
 import simpleFrag from './shaders/simple.frag'
 import { updateStats } from './stats'
@@ -26,6 +26,10 @@ function animate(time: number) {
   const uniforms = {
     u_time: time * 0.001,
     u_resolution: [gl.canvas.width, gl.canvas.height],
+    u_param1: config.param1,
+    u_param2: config.param2,
+    u_param3: config.param3,
+    u_param4: config.param4,
   }
 
   gl.useProgram(programInfo.program)
